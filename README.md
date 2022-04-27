@@ -1,2 +1,3 @@
-# Customer Portal
-A React.js customer portal. 
+# Caleb Herbel's Portfolio
+
+A React.js Portfolio / Resume.
