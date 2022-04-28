@@ -35,7 +35,7 @@ const Welcome = () => {
           transition={{ duration: 1.5 }}
           exit={{ opacity: 0 }}
         >
-          There, Hi There, Ho There
+          Hey There, Hi There, Ho There
         </motion.h1>
       </VerticalCenter>
     </Section>
