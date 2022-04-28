@@ -73,7 +73,7 @@ const RightColumn = styled.div`
   width: 100%;
 `;
 
-const Button = styled.div`
+const Button = styled(motion.div)`
   padding: 1rem 3rem;
   font-size: 1rem;
   border: 2px solid #fff;
@@ -143,14 +143,14 @@ const Hero = () => {
             Caleb Herbel's Portfolio
           </motion.p>
           <Link to="/welcome" style={{ textDecoration: "none" }}>
-            <motion.span
+            <Button
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1.5 }}
               exit={{ opacity: 0 }}
             >
-              <Button>Learn More</Button>
-            </motion.span>
+              Learn More
+            </Button>
           </Link>
         </LeftColumn>
         <RightColumn>
