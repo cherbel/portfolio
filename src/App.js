@@ -11,7 +11,7 @@ import "./App.css";
 function App() {
   const location = useLocation();
   return (
-    <AnimatePresence exitBeforeEnter initial={false}>
+    <AnimatePresence exitBeforeEnter initial={true}>
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Hero />} />
         <Route path="welcome" element={<Welcome />} />
