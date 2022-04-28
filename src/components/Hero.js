@@ -49,6 +49,19 @@ const LeftColumn = styled.div`
     font-size: 4rem;
     line-height: 1.1;
   }
+
+  @media screen and (max-width: 600px) {
+    h1 {
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+
+    p {
+      margin: 2rem 0;
+      font-size: 2rem;
+      line-height: 1.1;
+    }
+  }
 `;
 
 const RightColumn = styled.div`
@@ -68,6 +81,14 @@ const Button = styled.div`
   cursor: pointer;
   background: transparent;
   justify-items: center;
+  text-align: start;
+
+  @media screen and (max-width: 600px) {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.5rem;
+    border: 2px solid #fff;
+    border-radius: 4px;
+  }
 `;
 
 const Hero = () => {
@@ -116,7 +137,7 @@ const Hero = () => {
           >
             Caleb Herbel's Portfolio
           </motion.p>
-          <Button>Get Started</Button>
+          <Button>Learn More</Button>
         </LeftColumn>
         <RightColumn>
           <BoxCenter
