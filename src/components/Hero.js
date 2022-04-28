@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Section = styled.section`
   height: 100vh;
@@ -8,19 +9,19 @@ const Section = styled.section`
   background: #131313;
 `;
 
-const BoxTop = styled(motion.div)`
+const AnimationTop = styled(motion.div)`
   height: 20vh;
   width: 60%;
   background-color: white;
 `;
 
-const BoxBottom = styled(motion.div)`
+const AnimationBottom = styled(motion.div)`
   height: 20vh;
   width: 80%;
   background-color: white;
 `;
 
-const BoxCenter = styled(motion.div)`
+const AnimationCenter = styled(motion.div)`
   height: 20vh;
   width: 100%;
   background-color: white;
@@ -28,7 +29,7 @@ const BoxCenter = styled(motion.div)`
   justify-content: center;
 `;
 
-const Container = styled.section`
+const MiddleContainer = styled.section`
   display: flex;
   height: 40vh;
   padding: 3rem calc((80vw - 1300px) / 2);
@@ -82,6 +83,7 @@ const Button = styled.div`
   background: transparent;
   justify-items: center;
   text-align: start;
+  color: white;
 
   @media screen and (max-width: 600px) {
     padding: 0.5rem 1.5rem;
@@ -114,18 +116,20 @@ const Hero = () => {
 
   return (
     <Section>
-      <BoxTop
+      <AnimationTop
         variants={fadeLeftTop}
         initial="hidden"
         animate="visible"
         transition={{ duration: 1.5 }}
+        exit={{ opacity: 0, x: -400, y: 50 }}
       />
-      <Container>
+      <MiddleContainer>
         <LeftColumn>
           <motion.h1
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.5 }}
+            exit={{ opacity: 0 }}
           >
             Welcome to
           </motion.h1>
@@ -134,25 +138,30 @@ const Hero = () => {
             initial="hidden"
             animate="visible"
             transition={{ duration: 1.5 }}
+            exit={{ opacity: 0, x: -100 }}
           >
             Caleb Herbel's Portfolio
           </motion.p>
-          <Button>Learn More</Button>
+          <Link to="/welcome" style={{ textDecoration: "none" }}>
+            <Button>Learn More</Button>
+          </Link>
         </LeftColumn>
         <RightColumn>
-          <BoxCenter
+          <AnimationCenter
             variants={fadeRight}
             initial="hidden"
             animate="visible"
             transition={{ duration: 1.5 }}
+            exit={{ opacity: 0, x: 300 }}
           />
         </RightColumn>
-      </Container>
-      <BoxBottom
+      </MiddleContainer>
+      <AnimationBottom
         variants={fadeLeftBottom}
         initial="hidden"
         animate="visible"
         transition={{ duration: 1 }}
+        exit={{ opacity: 0, x: -200 }}
       />
     </Section>
   );
