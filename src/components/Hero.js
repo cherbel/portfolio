@@ -143,7 +143,14 @@ const Hero = () => {
             Caleb Herbel's Portfolio
           </motion.p>
           <Link to="/welcome" style={{ textDecoration: "none" }}>
-            <Button>Learn More</Button>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1.5 }}
+              exit={{ opacity: 0 }}
+            >
+              <Button>Learn More</Button>
+            </motion.div>
           </Link>
         </LeftColumn>
         <RightColumn>
